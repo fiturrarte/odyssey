@@ -1,29 +1,25 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Director;
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
 {
     public class CharacterShip : MonoBehaviour
     {
-        [SerializeField] private Vector3 bulletPositionOffset;
-        [SerializeField] private float spawnBulletInterval;
-        [SerializeField] BulletProvider bulletProvider;
+        [SerializeField] BulletProvider bulletProvider = new BulletProvider();
 
-        public void Initialize()
+        public void Start()
         {
-            StartCoroutine(SpawnBullet());
+            shoot();
         }
 
-        private IEnumerator SpawnBullet()
+        public void Initialized()
         {
-            yield return new WaitForSeconds(spawnBulletInterval);
-            GameObject bullet = bulletProvider.GetBullet();
-            bullet.transform.position = transform.position + bulletPositionOffset;
-            bullet.transform.rotation = Quaternion.identity;
-
-            StartCoroutine(SpawnBullet());
+            
         }
-        public void Shoot()
+
+        public void shoot()
         {
             // Obtener una bala del proveedor
             GameObject bullet = bulletProvider.GetBullet();

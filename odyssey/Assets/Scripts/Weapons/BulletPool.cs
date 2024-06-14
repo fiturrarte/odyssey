@@ -1,56 +1,38 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
     //Lista de Bullet
-    List<GameObject> bullets;
+    List<GameObject> bullets = new List<GameObject>();
     int poolSize = 10;
     [SerializeField] GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        bullets = new List<GameObject>(poolSize);
-        for (int i = 0; i < poolSize; i++)
-        {
-            CreateBullet();
-        }
-
-    }
-
-    private void CreateBullet()
-    {
+        Console.WriteLine("Start bulletPool");
+        //Bullet bullet = new Bullet();
         GameObject bullet = Instantiate(bulletPrefab);
-        bullet.SetActive(true);
+        bullet.SetActive(false);
         bullets.Add(bullet);
     }
 
-    public GameObject GetBullet()
+    public GameObject getBullet()
     {
-        int i = 0;
-        bool bulletFound = false;        
-        while (i < poolSize && !bulletFound)
-        {
-            GameObject bullet = bullets[i];
-            if (!bullet.activeInHierarchy)
-            {
-                bullet.SetActive(true);
-                bulletFound = true;
-            }
-            i++;
-        }
-        if (bulletFound)
-        {
-            return bullets[i-1];
-        } else
-        {
-            CreateBullet();
-            return bullets[0];
-        }
+        return bullets[0];
     }
 
-
- 
+   /* void Awake()
+    {
+        bullets = new List<GameObject>();
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab); 
+            bullet.SetActive(false);
+            bullets.Add(bullet);
+        }
+    }*/
 }

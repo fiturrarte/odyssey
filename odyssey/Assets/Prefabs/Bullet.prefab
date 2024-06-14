@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 643855125753134413}
-  - component: {fileID: 6656836001957772053}
+  - component: {fileID: 6251038891932180012}
+  - component: {fileID: 7173257420093132362}
+  - component: {fileID: 1009889325168526838}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
@@ -34,7 +36,7 @@ Transform:
   - {fileID: 1270828302445180107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6656836001957772053
+--- !u!114 &6251038891932180012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +45,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 3540782084771597870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8724902df4a8a48907e18f2d6287cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3be9bc95ad2e08643ae4c3a180cf4bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
+  clampToScreen: 0
+--- !u!114 &7173257420093132362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540782084771597870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db66cd8c6874d54fb6fc5c5ef707884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 8874381674267102180}
+  movement: {fileID: 6251038891932180012}
+  health: {fileID: 1009889325168526838}
+--- !u!114 &1009889325168526838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540782084771597870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f8da4f19375af4cae020cb5c6cc9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHitPoints: 1
 --- !u!1 &7778514782323614348
 GameObject:
   m_ObjectHideFlags: 0
