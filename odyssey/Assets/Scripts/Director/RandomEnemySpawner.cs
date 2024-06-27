@@ -19,7 +19,7 @@ namespace Assets.Scripts.Director
 
         public void Initialize()
         {
-            enemyBulletProvider.GetBullet();
+            //enemyBulletProvider.GetBullet();
             enemyProvider.Initialize(enemyBulletProvider);
         }
 
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Director
             Enemy enemy = enemyProvider.GetEnemy();
             float xPos = UnityEngine.Random.Range(-spawnAreaWidth / 2, spawnAreaWidth / 2);
             enemy.SetPosition(new Vector3(xPos, spawnYPosition, 0));
-            StartCoroutine(SpawnEnemy()); // Corregí "SpawnEneny" a "SpawnEnemy"
+            StartCoroutine(SpawnEnemy());
         }
     }
 }

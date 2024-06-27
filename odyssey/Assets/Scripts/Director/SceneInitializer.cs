@@ -7,8 +7,7 @@ namespace Assets.Scripts.Director
 
         [SerializeField] private RandomEnemySpawner enemySpawner;
         void Start()
-        {
-            //
+        {        
 
             var characterShip = FindObjectOfType<Actors.CharacterShip>();
             characterShip.Initialize();
